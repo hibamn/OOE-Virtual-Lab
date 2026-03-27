@@ -72,7 +72,7 @@ $$v = \frac{c}{n}$$
 
 ### 🔬 Simulation 1 — The Microfilm Projector (`lens_sim.py`)
 
-![Microfilm Projector Screenshot](docs/screenshots/microfilm_projector.png)
+![Microfilm Projector Screenshot](microfilm_projector.png)
 
 This simulation models a converging lens system that projects a microfilm onto a wall placed **1.50 m** from the lens — exactly the setup described in Track 3.
 
@@ -101,7 +101,7 @@ $$f = \frac{1}{P} = \frac{1}{10} = 0.10 \text{ m}, \quad OA = -10.71 \text{ cm},
 
 ### 👁️ Simulation 2 — Hyperopia Correction Simulator (`Hyperopia_Correction.py`)
 
-![Hyperopia Correction Screenshot](docs/screenshots/hyperopia_correction.png)
+![Hyperopia Correction Screenshot](hyperopia_correction.png)
 
 This simulation applies the **same thin-lens physics** to a real-world medical problem: correcting farsightedness (hyperopia) using a converging lens (glasses).
 
