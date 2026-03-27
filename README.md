@@ -217,3 +217,12 @@ python main.py
 ```
 
 ---
+
+## 🚀 Live Demo
+
+| Simulation | Link |
+|---|---|
+| 🔬 Microfilm Projector (HTML/JS) | [Open Simulation](https://nibaruu.github.io/microfilm-p/) |
+| 👁️ Hyperopia Correction | |
+| 🏜️ Desert Mirage |  |
+| 🌊 Ocean Mirage / Fata Morgana |  |
