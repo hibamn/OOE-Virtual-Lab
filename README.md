@@ -127,7 +127,7 @@ In the projector, we move the image **far away** onto a wall. In hyperopia corre
 
 ---
 
-## 🌅 Simulation 3 — Desert Mirage / Inferior Mirage (`desert_mirage.py`)
+## 🌅 Simulation 3 — Desert Mirage / Inferior Mirage
 
 ![Desert Mirage Screenshot](desert_mirage.png)
 
@@ -160,7 +160,7 @@ $$n(y) = n_{\text{base}} - \Delta n \cdot e^{-y/H}$$
 
 ---
 
-## 🌊 Simulation 4 — Ocean Mirage / Fata Morgana (`ocean_mirage.py`)
+## 🌊 Simulation 4 — Ocean Mirage / Fata Morgana
 
 ![Ocean Mirage Screenshot](ocean_mirage.png)
 
