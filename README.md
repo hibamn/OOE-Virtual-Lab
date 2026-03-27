@@ -127,15 +127,93 @@ In the projector, we move the image **far away** onto a wall. In hyperopia corre
 
 ---
 
-## ▶️ How to Run the Simulations
+## 🌅 Simulation 3 — Desert Mirage / Inferior Mirage (`desert_mirage.py`)
 
-**Requirements:** Python 3.x with `tkinter` (included by default in most Python installations)
+![Desert Mirage Screenshot](desert_mirage.png)
+
+This simulation models the **inferior mirage** — the "water on the road" effect seen on hot desert surfaces. It uses RK4 numerical ray tracing through a realistic atmosphere model.
+
+**What it shows:**
+- A desert scene with light rays bending **upward** near the hot ground
+- The **real object** position vs the apparent mirage image below it
+- Bottom-left: the **Refractive Index Profile** n(y) — sharp drop near the ground
+- Bottom-right: **Ray Trajectories** y(x) — rays curving upward due to the gradient
+
+**Atmosphere model used:**
+$$n(y) = n_{\text{base}} - \Delta n \cdot e^{-y/H}$$
+
+**Controls:**
+| Slider | What it does |
+|---|---|
+| Δn (index depression) | Strength of the refractive index gradient near the ground |
+| Scale Height H [m] | How quickly the hot air effect fades with height |
+| Ground Temp [°C] | Temperature at the surface (drives the gradient) |
+| Air Temp [°C] | Ambient air temperature above |
+| Object Distance [m] | How far away the real object is |
+| Object Height [m] | Height of the object |
+| Observer Height [m] | Height of the observer's eye |
+| Ray Count | Number of rays traced simultaneously |
+
+**Checkboxes:**
+- **Show Rays** → Toggle ray visibility on the scene
+- **Enable Heat Shimmer** → Adds realistic flickering effect to the mirage
+
+---
+
+## 🌊 Simulation 4 — Ocean Mirage / Fata Morgana (`ocean_mirage.py`)
+
+![Ocean Mirage Screenshot](ocean_mirage.png)
+
+This simulation models the **superior mirage (Fata Morgana)** — an optical phenomenon seen over cold oceans where distant objects appear lifted, stretched, or duplicated. Uses RK4 integration with a dual-exponential atmosphere model.
+
+**What it shows:**
+- An ocean scene with a **ship** appearing elevated above its true position
+- The **Fata Morgana** label marks the mirage image, **True Position** marks reality
+- Colored rays from the observer showing how light bends through the inversion layer
+- Bottom-left: **Refractive Index Profile** with the characteristic inversion "kink"
+- Bottom-right: **Ray Trajectories** showing ducting behavior near the surface
+
+**Atmosphere model used:**
+$$n(y) = n_{\text{base}} + A \cdot e^{-y/h_1} - B \cdot e^{-y/h_2}$$
+
+**Controls:**
+| Slider | What it does |
+|---|---|
+| Inversion Strength A | Strength of the cold dense air layer near the surface |
+| Counter Term B | Controls the normal density decrease with altitude |
+| Inversion Height h1 [m] | Scale height of the cold surface layer |
+| Atmosphere Scale h2 [m] | Scale height of the upper atmosphere decay |
+| Ship Distance [km] | How far away the ship is from the observer |
+| Ship Height [m] | Real height of the ship |
+| Observer Height [m] | Height of the observer above sea level |
+| Ray Count | Number of rays to trace |
+
+**Checkboxes:**
+- **Show Rays** → Toggle ray visibility
+- **Enable Ducting** → Allows rays to be trapped inside the inversion layer
+
+---
+
+## ▶️ How to Run All Simulations
+
+**Requirements:** Python 3.x — install dependencies with:
+```bash
+pip install numpy matplotlib tkinter
+```
 ```bash
 # Microfilm Projector
 python lens_sim.py
 
 # Hyperopia Correction
 python Hyperopia_Correction.py
+
+# Desert / Inferior Mirage
+cd Numerical-Simulation-of-Inferior-and-Superior-Atmospheric-Mirages/feta_morgana/desert_mirage
+python main.py
+
+# Ocean / Superior Mirage (Fata Morgana)
+cd Numerical-Simulation-of-Inferior-and-Superior-Atmospheric-Mirages/feta_morgana/ocean_mirage
+python main.py
 ```
 
 ---
