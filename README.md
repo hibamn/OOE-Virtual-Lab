@@ -76,7 +76,9 @@ $$v = \frac{c}{n}$$
 $$d_i = v_g \cdot \Delta t_i$$
 
 **TDOA Error Minimization (Least Squares Grid Search):**
-$$E(x,y) = \sum_{i} \left( \frac{||\vec{S}_i - \vec{p}||}{v_g} - \Delta t_{\text{meas},i} \right)^2$$
+$$
+E(x,y) = \sum_{i} \left( \frac{||\vec{S}_i - \vec{p}||}{v_g} - \Delta t_{\text{meas},i} \right)^2
+$$
 
 **Position uncertainty from noise:**
 $$\sigma_{xy} \approx v_g \cdot \sigma_t$$
