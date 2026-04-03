@@ -221,13 +221,12 @@ This simulation demonstrates how a **keystroke on a solid plate** generates mech
 - Right panel: full telemetry (TDOA values, coordinates, error) and decoded output in HEX and binary
 
 **Physics model used:**
-$$
+```math
 d_i = v_g \cdot \Delta t_i
-$$
-
-$$
+```
+```math
 E(x,y) = \sum_{i} \left( \frac{||\vec{S}_i - \vec{p}||}{v_g} - \Delta t_{\text{meas},i} \right)^2
-$$
+```
 
 **Parameters:**
 | Parameter | Value |
