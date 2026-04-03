@@ -209,7 +209,7 @@ $$n(y) = n_{\text{base}} + A \cdot e^{-y/h_1} - B \cdot e^{-y/h_2}$$
 
 ### 🔊 Simulation 5 — The Atomic Whisper: Acoustic Triangulation (`simulation.py`)
 
-![Atomic Whisper Screenshot](The_atomic_whisper.jpg)
+![Atomic Whisper Screenshot](The%20atomic%20whisper.jpg)
 
 This simulation demonstrates how a **keystroke on a solid plate** generates mechanical waves detected by sensors, which are then used to **triangulate the exact key pressed** — using TDOA (Time Difference of Arrival) physics.
 
