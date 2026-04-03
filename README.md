@@ -222,8 +222,11 @@ This simulation demonstrates how a **keystroke on a solid plate** generates mech
 
 **Physics model used:**
 $$
-d_i = v_g \cdot \Delta t_i, \quad 
-E(x,y) = \sum_i \left( \frac{\| \vec{S}_i - \vec{p} \|}{v_g} - \Delta t_{\text{meas},i} \right)^2
+d_i = v_g \cdot \Delta t_i
+$$
+
+$$
+E(x,y) = \sum_{i} \left( \frac{||\vec{S}_i - \vec{p}||}{v_g} - \Delta t_{\text{meas},i} \right)^2
 $$
 
 **Parameters:**
