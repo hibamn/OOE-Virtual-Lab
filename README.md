@@ -23,7 +23,7 @@ This project contains two physics simulations:
 
 1. **The Microfilm Projector**: A converging lens system that projects a microfilm onto a wall using the thin-lens equation and transverse magnification.
 2. **Atmospheric Mirages**: A numerical ray-tracing simulation of inferior (desert) and superior (Fata Morgana) mirages using RK4 integration.
-
+3. **The Atomic Whisper**: Nano-Phononics Acoustic Triangulation — TDOA-based keystroke localization
 ---
 
 ## 📐 Physics Formulas Used
@@ -67,6 +67,19 @@ $$n(y) = n_{\text{base}} + A \cdot e^{-y/h_1} - B \cdot e^{-y/h_2}$$
 
 **Phase Velocity:**
 $$v = \frac{c}{n}$$
+
+---
+
+### 🔷 The Atomic Whisper – Acoustic Triangulation (TDOA)
+
+**Distance from wave propagation:**
+$$d_i = v_g \cdot \Delta t_i$$
+
+**TDOA Error Minimization (Least Squares Grid Search):**
+$$E(x,y) = \sum_{i} \left( \frac{||\vec{S}_i - \vec{p}||}{v_g} - \Delta t_{\text{meas},i} \right)^2$$
+
+**Position uncertainty from noise:**
+$$\sigma_{xy} \approx v_g \cdot \sigma_t$$
 
 ---
 
@@ -194,6 +207,47 @@ $$n(y) = n_{\text{base}} + A \cdot e^{-y/h_1} - B \cdot e^{-y/h_2}$$
 
 ---
 
+### 🔊 Simulation 5 — The Atomic Whisper: Acoustic Triangulation (`simulation.py`)
+
+![Atomic Whisper Screenshot](The_atomic_whisper.jpg)
+
+This simulation demonstrates how a **keystroke on a solid plate** generates mechanical waves detected by sensors, which are then used to **triangulate the exact key pressed** — using TDOA (Time Difference of Arrival) physics.
+
+**What it shows:**
+- A full keyboard layout on a plate with **4 sensors (S1–S4)** at the corners
+- A glowing **heatmap** showing the TDOA error field — brightest point is the wave origin
+- **Animated propagation rings** spreading outward from the detected key
+- The **highlighted key** that was triangulated in real time
+- Right panel: full telemetry (TDOA values, coordinates, error) and decoded output in HEX and binary
+
+**Physics model used:**
+$$d_i = v_g \cdot \Delta t_i, \qquad E(x,y) = \sum_{i} \left( \frac{||\vec{S}_i - \vec{p}||}{v_g} - \Delta t_{\text{meas},i} \right)^2$$
+
+**Parameters:**
+| Parameter | Value |
+|---|---|
+| Wave group velocity vg | 600 m/s |
+| Sensor noise std | 4 µs |
+| Grid resolution | 220 × 220 points |
+| Number of sensors | 4 (corner-placed) |
+
+**How to interact:**
+- **Press any keyboard key** (Q–P, A–L, Z–M) → simulation triangulates and highlights it instantly
+- **Click on any key** on the plate diagram with the mouse → same result
+
+**Decoded output example:**
+KEY NODE    :  'J'
+RECON HEX   :   0x4A
+RECON BINARY:   0b01001010
+
+**Real-world applications:**
+- Keyboard side-channel attack via vibration analysis
+- Assistive surface-tap interfaces
+- Smart door knock localization
+- Interactive wall tap detection
+
+---
+
 ## ▶️ How to Run All Simulations
 
 **Requirements:** Python 3.x — install dependencies with:
@@ -214,6 +268,10 @@ python main.py
 # Ocean / Superior Mirage (Fata Morgana)
 cd Numerical-Simulation-of-Inferior-and-Superior-Atmospheric-Mirages/feta_morgana/ocean_mirage
 python main.py
+
+# Simulation 5 — The Atomic Whisper
+python simulation.py
+
 ```
 
 ---
