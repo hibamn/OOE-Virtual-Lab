@@ -288,5 +288,4 @@ python simulation.py
 |---|---|
 | 🔬 Microfilm Projector (HTML/JS) | [Open Simulation](https://nibaruu.github.io/microfilm-p/) |
 | 👁️ Hyperopia Correction | |
-| 🏜️ Desert Mirage |  |
-| 🌊 Ocean Mirage / Fata Morgana |  |
+| 🔊 Atomic Whisper |  |
