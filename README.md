@@ -287,5 +287,5 @@ python simulation.py
 | Simulation | Link |
 |---|---|
 | 🔬 Microfilm Projector (HTML/JS) | [Open Simulation](https://nibaruu.github.io/microfilm-p/) |
-| 👁️ Hyperopia Correction | |
+| 👁️ Hyperopia Correction | [Open Simulation](https://hibamn.github.io/hyperopia-corr/) |
 | 🔊 Atomic Whisper |  [Open Simulation](https://hibamn.github.io/atomic-whisper/) |
